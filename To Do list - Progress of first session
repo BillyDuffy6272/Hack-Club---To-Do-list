@@ -1,0 +1,142 @@
+import time
+
+def begin_code():
+    global begin
+    begin = input("Are you ready to start? (y or n) ")
+
+def greeting():
+    print("Hello and welcome to you very own...")
+    time.sleep(1)
+    print("TO DO LIST APPLICATION!!")
+    time.sleep(1)
+    print("Sorry but FYI the limit is 4 items")
+    print("\n")
+
+def first_thing():
+    global first_item
+    first_item = input("Whats the first thing on your list? ")    
+
+def keep_going_first():
+    global add
+    add = input("Do you want to add more?(y or n) ")
+
+def second_thing():
+    global second_item
+    second_item = input("Whats the second thing on your list? ")
+
+def keep_going_second():
+    global add_2
+    add_2 = input("Do you want to add more?(y or n) ")
+
+def third_thing():
+    global third_item
+    third_item = input("Whats you third thing on your list? ")
+
+def keep_going_third():
+    global add_3
+    add_3 = input("Do you want to add more?(y or n) ")
+
+def fourth_thing():
+    global fourth_item
+    fourth_item = input("Whats your fourth thing on your list? ")
+
+
+def start():
+    time.sleep(1)
+    begin_code()
+    time.sleep(1)
+    if begin == "y":
+        print("Great lets start creating you list!")
+        time.sleep(1)
+
+    else:
+        print(":( ok then, nevermind")
+        time.sleep(2)
+        print("You may have entered wrong, just saying...")
+        print("\n")
+        exit
+
+
+def making_list_first():
+    print("Ok lets create your list!")
+    time.sleep(1)
+    first_thing()
+    time.sleep(1)
+    keep_going_first()
+    time.sleep(1)
+    if add == "y":
+        print("Great lets add your next item")
+        time.sleep(1)
+        making_list_second()
+    else:
+        print("Guess your done..")
+        time.sleep(2)
+        print("Or entered wrong, sorry you will have to restart")
+        #run end def for viewing
+
+
+def making_list_second():
+    time.sleep(1)
+    print("Lets create your next item")
+    time.sleep(1)
+    second_thing()
+    time.sleep(1)
+    keep_going_second()
+    time.sleep(1)
+    if add_2 == "y":
+        print("Great lets add your next item")
+        making_list_third()
+    else:
+        print("Guess your done..")
+        time.sleep(2)
+        print("Or entered wrong, sorry you will have to restart")
+    
+
+def making_list_third():
+    time.sleep(1)
+    print("Lets create your next item")
+    time.sleep(1)
+    third_thing()
+    time.sleep(1)
+    keep_going_third()
+    time.sleep(1)
+    if add_3 == "y":
+        print("Great lets add your next item")
+        making_list_fourth()
+    else:
+        print("Guess your done..")
+        time.sleep(2)
+        print("Or entered wrong")
+
+    
+def making_list_fourth():
+    time.sleep(1)
+    print("Lets create your next item")
+    time.sleep(1)
+    fourth_thing()
+    time.sleep(1)
+
+def viewing():
+    global view_or_not_to_view
+    view_or_not_to_view = input("Would you like to see you list now?(y or n) ")
+
+def end():
+    time.sleep(1)
+    print("You have now finished adding the items on your list")
+    viewing()
+    if view_or_not_to_view == "y":
+            print("1. " + first_item)
+            print("2. " + second_item)
+            print("3. " + third_item)
+            print("4. " + fourth_item)
+    else:
+        print("Ok fine, whatever")
+        time.sleep(1)
+        print("It's not like I have spend all this time on making this for you")
+        exit
+    
+
+greeting()
+start()
+making_list_first()
+end()
